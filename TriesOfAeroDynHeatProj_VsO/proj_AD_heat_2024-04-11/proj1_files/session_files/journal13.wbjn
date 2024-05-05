@@ -1,0 +1,17 @@
+# encoding: utf-8
+# 2019 R2
+SetScriptVersion(Version="19.4.159")
+system1 = GetSystem(Name="FFF")
+setup1 = system1.GetContainer(ComponentName="Setup")
+fluentLauncherSettings1 = setup1.GetFluentLauncherSettings()
+fluentLauncherSettings1.SetEntityProperties(Properties=Set(EnvPath={}))
+setup1.Edit()
+setup1.SendCommand(Command=r'chdir "D:\MyFilesCur\MyPrgs\Ansys\TriesOfAeroDynHeatProj_VsO\proj_AD_heat_2024-04-11\proj1_files\dp0\FFF\Fluent"')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame4(User-Defined)*Table1*Table3(User Defined)*PushButton1(Functions)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*PopupMenuFunctions*Compiled...")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Compiled UDFs*Table1*Frame1*Frame2*PushButton2( Delete)")')
+setup1.SendCommand(Command="(cx-gui-do cx-activate-item \"Compiled UDFs*Table1*Frame1*Frame2*PushButton1( Add)\")(cx-gui-do cx-set-file-dialog-entries \"Select File\" '( \"heater_RV_x0.5_train1.c\") \"Source Files (*.c *.cpp )\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Compiled UDFs*Frame8*PushButton2(Build)")(cx-gui-do cx-activate-item "Question*OK")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Compiled UDFs*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*ImportSubMenu*Case...")(cx-gui-do cx-activate-item "Question*Cancel")')
+Save(Overwrite=True)

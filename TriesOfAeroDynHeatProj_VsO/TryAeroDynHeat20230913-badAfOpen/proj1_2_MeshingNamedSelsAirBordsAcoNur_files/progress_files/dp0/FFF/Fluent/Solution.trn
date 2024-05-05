@@ -1,0 +1,285 @@
+
+Build Time: Apr 16 2019 10:59:31 
+Executable Path: D:/Prog/ANSYSI~1/v194/fluent/ntbin/win64/fluent.exe
+
+-------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID   Vendor                 
+-------------------------------------------------------------------------------
+n1    133-7320  2/4  Windows-x64  5584  Intel(R) Xeon(R) W3550 
+n0*   133-7320  1/4  Windows-x64  8964  Intel(R) Xeon(R) W3550 
+host  133-7320       Windows-x64  8356  Intel(R) Xeon(R) W3550 
+
+MPI Option Selected: ibmmpi
+Selected system interconnect: default
+-------------------------------------------------------------------------------
+Warning: Ignoring WB preference save-post-processing-images
+
+133-7320 is already loaded (24.7295%).                       Process affinity not being set.
+Reading "D:\MyFilesCur\MyPrgs\Ansys\TryAeroDynHeat20230913\proj1_2_MeshingNamedSelsAirBordsAcoNur_files\dp0\FFF\MECH\FFF.1.msh"...
+Buffering for file scan...
+
+    3330 nodes, binary.
+     481 nodes, binary.
+     330 2D interior faces, zone  1, binary.
+    4147 2D interior faces, zone  2, binary.
+    2425 2D interior faces, zone  3, binary.
+      13 2D velocity-inlet faces, zone  9, binary.
+      13 2D pressure-outlet faces, zone 10, binary.
+      15 2D wall faces, zone 11, binary.
+      15 2D wall faces, zone 12, binary.
+       4 2D interface faces, zone 13, binary.
+      18 2D interface faces, zone 14, binary.
+     154 2D interface faces, zone 15, binary.
+      39 2D interface faces, zone 16, binary.
+      60 2D interface faces, zone 17, binary.
+     150 2D interface faces, zone 18, binary.
+     185 mixed cells, zone  8, binary.
+    2138 mixed cells, zone  6, binary.
+    1250 quadrilateral cells, zone  7, binary.
+
+
+
+Building...
+     mesh
+	auto partitioning mesh by Metis (fast),
+	distributing mesh
+		parts..,
+		faces..,
+		nodes..,
+		cells..,
+        bandwidth reduction using Reverse Cuthill-McKee: 1773/32 = 55.4063
+     materials,
+     interface,
+     domains,
+	mixture
+     zones,
+	contact_region_2-trg
+	bladeandelectrodeborder-contact_region_2-src
+	bladecontourinair-contact_region-trg
+	contact_region-trg
+	bladecontourinair-contact_region-src
+	contact_region-src
+	airlowerwall
+	airupperwall
+	airoutlet
+	airinlet
+	air
+	electrode
+	blade
+	interior-electrode
+	interior-blade
+	interior-air
+	interior-5
+	interior-19
+	interior-20
+	interior-21
+	wall-22
+	wall-23
+	wall-24
+	wall-25
+	interior-26
+	wall-27
+	wall-28Sliding interface contact_region_2 already defined, skipped.
+Sliding interface contact_region already defined, skipped.
+
+     mesh interfaces,Setting blade (mixture) ... Done.
+Setting electrode (mixture) ... Done.
+Setting air (mixture) ... Done.
+
+WARNING: Current Mesh is incompatible with mesh operations defined. Following zones are missing:
+	aircontour
+	wall-19
+	wall-20
+	wall-21
+ Setting zone id of blade to 6.
+ Setting zone id of electrode to 7.
+ Setting zone id of air to 8.
+ Setting zone id of wall-25 to 25.
+ Setting zone id of wall-24 to 24.
+ Setting zone id of wall-22 to 22.
+ Setting zone id of interior-5 to 5.
+ Setting zone id of interior-air to 1.
+ Setting zone id of interior-blade to 2.
+ Setting zone id of interior-electrode to 3.
+ Setting zone id of contact_region-src to 10.
+ Setting zone id of bladecontourinair-contact_region-src to 11.
+ Setting zone id of contact_region-trg to 12.
+ Setting zone id of bladecontourinair-contact_region-trg to 13.
+ Setting zone id of bladeandelectrodeborder-contact_region_2-src to 14.
+ Setting zone id of contact_region_2-trg to 15.
+ Setting zone id of airlowerwall to 51.
+ Setting zone id of airupperwall to 52.
+ Setting zone id of airoutlet to 53.
+ Setting zone id of airinlet to 9.
+ Setting zone id of interior-19 to 19.
+ Setting zone id of interior-20 to 20.
+ Setting zone id of interior-21 to 21.
+ Setting zone id of wall-23 to 23.
+ Setting zone id of interior-26 to 26.
+ Setting zone id of wall-27 to 27.
+ Setting zone id of wall-28 to 28.
+Done.
+Setting blade (mixture) ... Done.
+Setting electrode (mixture) ... Done.
+Setting air (mixture) ... Done.
+Setting wall-25 (mixture) ... Done.
+Setting wall-24 (mixture) ... Done.
+No zone with name interior-23 (type interior) (mixture), skipped.
+Setting wall-22 (mixture) ... Done.
+No zone with name wall-21 (type wall) (mixture), skipped.
+No zone with name wall-20 (type wall) (mixture), skipped.
+No zone with name wall-19 (type wall) (mixture), skipped.
+No zone with name interior-18 (type interior) (mixture), skipped.
+No zone with name interior-17 (type interior) (mixture), skipped.
+No zone with name interior-16 (type interior) (mixture), skipped.
+Setting interior-5 (mixture) ... Done.
+Setting interior-air (mixture) ... Done.
+Setting interior-blade (mixture) ... Done.
+Setting interior-electrode (mixture) ... Done.
+No zone with name aircontour (type wall) (mixture), skipped.
+Setting contact_region-src (mixture) ... Done.
+Setting bladecontourinair-contact_region-src (mixture) ... Done.
+Setting contact_region-trg (mixture) ... Done.
+Setting bladecontourinair-contact_region-trg (mixture) ... Done.
+Setting bladeandelectrodeborder-contact_region_2-src (mixture) ... Done.
+Setting contact_region_2-trg (mixture) ... Done.
+
+Checking newly created zones for preferred zone IDs...
+No zone with name interior-16 (type interior) (mixture), skipped.
+No zone with name interior-17 (type interior) (mixture), skipped.
+No zone with name interior-18 (type interior) (mixture), skipped.
+No zone with name interior-23 (type interior) (mixture), skipped.
+
+     parallel,
+Done.
+
+Preparing mesh for display...
+Note: zone-surface: cannot create surface from sliding interface zone.
+Creating empty surface.
+Note: zone-surface: cannot create surface from sliding interface zone.
+Creating empty surface.
+Note: zone-surface: cannot create surface from sliding interface zone.
+Creating empty surface.
+Note: zone-surface: cannot create surface from sliding interface zone.
+Creating empty surface.
+Done.
+********************* WARNING ******************************************
+************************************************************************
+** Following expected zones were not found in the current mesh: 
+** 	wall-21
+** 	wall-20
+** 	wall-19
+** 	aircontour
+** Found Following new zones in the current mesh: 
+** 	airlowerwall
+** 	airupperwall
+** 	airoutlet
+** 	airinlet
+** 	wall-23
+** 	wall-27
+** 	wall-28
+**
+** Please ensure that your current Setup is valid.
+************************************************************************
+************************************************************************
+"Updating Setup cell..."
+"Updating Solution cell..."
+Initialization based on settings...
+("Mesh-operation and/or zone settings are incompatible. First resolve it manually
+ by visiting 'File->Recorded Mesh Operations->Edit Incoming Zones... -> Match Zone Names...' .")
+
+Error: Mesh-operation and/or zone settings are incompatible. First resolve it manually
+ by visiting 'File->Recorded Mesh Operations->Edit Incoming Zones... -> Match Zone Names...' .
+Error Object: #f
+Writing "| gzip -2cf > FFF.1-Setup-Output.cas.gz"...
+Writing temporary file C:\\TEMP\\flntgz-83562 ...
+     185 mixed cells, zone  8, binary.
+    2138 mixed cells, zone  6, binary.
+    1250 quadrilateral cells, zone  7, binary.
+     185 cell partition ids, zone  8, 2 partitions, binary.
+    2138 cell partition ids, zone  6, 2 partitions, binary.
+    1250 cell partition ids, zone  7, 2 partitions, binary.
+     206 mixed interior faces, zone 26, binary.
+      42 mixed interior faces, zone 20, binary.
+     169 mixed interior faces, zone 19, binary.
+     330 2D interior faces, zone  1, binary.
+    4147 2D interior faces, zone  2, binary.
+    2425 2D interior faces, zone  3, binary.
+      13 2D velocity-inlet faces, zone  9, binary.
+      13 2D pressure-outlet faces, zone 53, binary.
+      15 2D wall faces, zone 52, binary.
+      15 2D wall faces, zone 51, binary.
+       4 2D interface faces, zone 10, binary.
+      18 2D interface faces, zone 11, binary.
+     154 2D interface faces, zone 12, binary.
+      39 2D interface faces, zone 13, binary.
+      60 2D interface faces, zone 14, binary.
+     150 2D interface faces, zone 15, binary.
+     206 interior parent pointers, zone 26, binary.
+      42 interior parent pointers, zone 20, binary.
+     169 interior parent pointers, zone 19, binary.
+     206 interface metric data, zone 26, binary.
+      42 interface metric data, zone 20, binary.
+     169 interface metric data, zone 19, binary.
+    3811 nodes, binary.
+    3811 node flags, binary.
+Done.
+
+Writing "| gzip -2cf > FFF.1-1.cas.gz"...
+Writing temporary file C:\\TEMP\\flntgz-83563 ...
+     185 mixed cells, zone  8, binary.
+    2138 mixed cells, zone  6, binary.
+    1250 quadrilateral cells, zone  7, binary.
+     185 cell partition ids, zone  8, 2 partitions, binary.
+    2138 cell partition ids, zone  6, 2 partitions, binary.
+    1250 cell partition ids, zone  7, 2 partitions, binary.
+     206 mixed interior faces, zone 26, binary.
+      42 mixed interior faces, zone 20, binary.
+     169 mixed interior faces, zone 19, binary.
+     330 2D interior faces, zone  1, binary.
+    4147 2D interior faces, zone  2, binary.
+    2425 2D interior faces, zone  3, binary.
+      13 2D velocity-inlet faces, zone  9, binary.
+      13 2D pressure-outlet faces, zone 53, binary.
+      15 2D wall faces, zone 52, binary.
+      15 2D wall faces, zone 51, binary.
+       4 2D interface faces, zone 10, binary.
+      18 2D interface faces, zone 11, binary.
+     154 2D interface faces, zone 12, binary.
+      39 2D interface faces, zone 13, binary.
+      60 2D interface faces, zone 14, binary.
+     150 2D interface faces, zone 15, binary.
+     206 interior parent pointers, zone 26, binary.
+      42 interior parent pointers, zone 20, binary.
+     169 interior parent pointers, zone 19, binary.
+     206 interface metric data, zone 26, binary.
+      42 interface metric data, zone 20, binary.
+     169 interface metric data, zone 19, binary.
+    3811 nodes, binary.
+    3811 node flags, binary.
+Done.
+
+Writing "| gzip -2cf > FFF.1-1-00000.dat.gz"...
+Writing temporary file C:\\TEMP\\flntgz-83564 ...
+Done.
+
+
+Performance Timer for 0 iterations on 2 compute nodes
+  Average wall-clock time per iteration:              0.000 sec
+  Global reductions per iteration:                        0 ops
+  Global reductions time per iteration:               0.000 sec (0.0%)
+  Message count per iteration:                            0 messages
+  Data transfer per iteration:                        0.000 MB
+  LE solves per iteration:                                0 solves
+  LE wall-clock time per iteration:                   0.000 sec (0.0%)
+  LE global solves per iteration:                         0 solves
+  LE global wall-clock time per iteration:            0.000 sec (0.0%)
+  LE global matrix maximum size:                         0
+  AMG cycles per iteration:                           0.000 cycles
+  Relaxation sweeps per iteration:                        0 sweeps
+  Relaxation exchanges per iteration:                     0 exchanges
+  LE early protections (stall) per iteration:           0.000 times
+  LE early protections (divergence) per iteration:      0.000 times
+
+  Total wall-clock time:                              0.000 sec
+

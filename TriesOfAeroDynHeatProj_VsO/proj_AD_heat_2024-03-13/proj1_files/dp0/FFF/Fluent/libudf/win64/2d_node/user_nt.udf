@@ -1,0 +1,5 @@
+CSOURCES= $(SRC)heater_RV_x0.5.c
+HSOURCES=
+VERSION=2d_node
+PARALLEL_NODE=ibmmpi
+GPU_SUPPORT=off

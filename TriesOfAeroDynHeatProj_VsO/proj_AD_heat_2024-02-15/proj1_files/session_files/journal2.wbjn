@@ -1,0 +1,15 @@
+# encoding: utf-8
+# 2019 R2
+SetScriptVersion(Version="19.4.159")
+system1 = GetSystem(Name="FFF")
+mesh1 = system1.GetContainer(ComponentName="Mesh")
+mesh1.Edit()
+mesh1.Exit()
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.SetFile(FilePath="D:/MyFilesCur/MyPrgs/Ansys/Geom/ModelGeomComplexFormMultyEld1.x_t")
+meshComponent1 = system1.GetComponent(Name="Mesh")
+meshComponent1.Refresh()
+mesh1.Edit()
+mesh1.Edit()
+Save(Overwrite=True)
+Save(Overwrite=True)

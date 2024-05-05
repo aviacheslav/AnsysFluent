@@ -1,0 +1,700 @@
+<FluentXMLReport>
+<version>
+Fluent
+Version: 2d, pbns, trans-sst, transient (2d, pressure-based, trans-sst model, transient)
+Release: 19.4.0
+Title: 
+</version>
+
+<Models>
+
+Models
+------
+
+   Model                        Settings                       
+   ---------------------------------------------------------
+   Space                        2D                             
+   Time                         Unsteady, 1st-Order Implicit   
+   Viscous                      Transition SST model           
+   Heat Transfer                Enabled                        
+   Solidification and Melting   Disabled                       
+   Radiation                    None                           
+   Species                      Disabled                       
+   Coupled Dispersed Phase      Disabled                       
+   NOx Pollutants               Disabled                       
+   SOx Pollutants               Disabled                       
+   Soot                         Disabled                       
+   Mercury Pollutants           Disabled                       
+   Structure                    Disabled                       
+
+</Models>
+
+<MaterialProperties>
+Material Properties
+-------------------
+
+   Material: copper (solid)
+
+      Property               Units    Method     Value(s)   
+      ---------------------------------------------------
+      Density                kg/m3    constant   8950       
+      Cp (Specific Heat)     j/kg-k   constant   385        
+      Thermal Conductivity   w/m-k    constant   394        
+
+   Material: carbon-fiber (solid)
+
+      Property               Units    Method     Value(s)   
+      ---------------------------------------------------
+      Density                kg/m3    constant   1883       
+      Cp (Specific Heat)     j/kg-k   constant   1200       
+      Thermal Conductivity   w/m-k    constant   0.85       
+
+   Material: air (fluid)
+
+      Property                        Units     Method     Value(s)     
+      ---------------------------------------------------------------
+      Density                         kg/m3     constant   1.225        
+      Cp (Specific Heat)              j/kg-k    constant   1006.43      
+      Thermal Conductivity            w/m-k     constant   0.0242       
+      Viscosity                       kg/m-s    constant   1.7894e-05   
+      Molecular Weight                kg/kmol   constant   28.966       
+      Thermal Expansion Coefficient   1/k       constant   0            
+      Speed of Sound                  m/s       none       #f           
+
+   Material: aluminum (solid)
+
+      Property               Units    Method     Value(s)   
+      ---------------------------------------------------
+      Density                kg/m3    constant   2719       
+      Cp (Specific Heat)     j/kg-k   constant   871        
+      Thermal Conductivity   w/m-k    constant   202.4      
+
+</MaterialProperties>
+
+<CellZoneConditions>
+Cell Zone Conditions
+--------------------
+
+   Zones
+
+      name                 id   type    
+      -------------------------------
+      electrodeuppervorn   13   solid   
+      electrodeupperback   14   solid   
+      electrodelowervorn   15   solid   
+      electrodelowerback   16   solid   
+      electrodecentral     12   solid   
+      blade                11   solid   
+      air                  10   fluid   
+
+   Setup Conditions
+
+      electrodeuppervorn
+
+         Condition               Value                                                                         
+         ---------------------------------------------------------------------------------------------------
+         Specify source terms?   yes                                                                           
+         Source Terms            ((energy ((profile udf heat_genI::libudf) (inactive . #f) (constant . 0))))   
+         Frame Motion?           no                                                                            
+         Mesh Motion?            no                                                                            
+
+      electrodeupperback
+
+         Condition               Value                                                                         
+         ---------------------------------------------------------------------------------------------------
+         Specify source terms?   yes                                                                           
+         Source Terms            ((energy ((profile udf heat_genI::libudf) (inactive . #f) (constant . 0))))   
+         Frame Motion?           no                                                                            
+         Mesh Motion?            no                                                                            
+
+      electrodelowervorn
+
+         Condition               Value                                                                          
+         ----------------------------------------------------------------------------------------------------
+         Specify source terms?   yes                                                                            
+         Source Terms            ((energy ((profile udf heat_genII::libudf) (inactive . #f) (constant . 0))))   
+         Frame Motion?           no                                                                             
+         Mesh Motion?            no                                                                             
+
+      electrodelowerback
+
+         Condition               Value                                                                          
+         ----------------------------------------------------------------------------------------------------
+         Specify source terms?   yes                                                                            
+         Source Terms            ((energy ((profile udf heat_genII::libudf) (inactive . #f) (constant . 0))))   
+         Frame Motion?           no                                                                             
+         Mesh Motion?            no                                                                             
+
+      electrodecentral
+
+         Condition               Value                                                                         
+         ---------------------------------------------------------------------------------------------------
+         Specify source terms?   yes                                                                           
+         Source Terms            ((energy ((profile udf heat_genN::libudf) (inactive . #f) (constant . 0))))   
+         Frame Motion?           no                                                                            
+         Mesh Motion?            no                                                                            
+
+      blade
+
+         Condition       Value          
+         ----------------------------
+         Material Name   carbon-fiber   
+         Frame Motion?   no             
+         Mesh Motion?    no             
+
+      air
+
+         Condition       Value   
+         ---------------------
+         Frame Motion?   no      
+         Mesh Motion?    no      
+
+</CellZoneConditions>
+
+<BoundaryConditions>
+Boundary Conditions
+-------------------
+
+   Zones
+
+      name                                              id   type              
+      ----------------------------------------------------------------------
+      wall-52-shadow                                    69   wall              
+      wall-57-shadow                                    68   wall              
+      wall-60-shadow                                    65   wall              
+      wall-9-shadow                                     76   wall              
+      wall-9                                            9    wall              
+      wall-40-shadow                                    75   wall              
+      wall-40                                           40   wall              
+      wall-43-shadow                                    74   wall              
+      wall-43                                           43   wall              
+      wall-46-shadow                                    73   wall              
+      wall-46                                           46   wall              
+      wall-49-shadow                                    72   wall              
+      wall-49                                           49   wall              
+      wall-50-shadow                                    71   wall              
+      wall-50                                           50   wall              
+      wall-51-shadow                                    70   wall              
+      wall-51                                           51   wall              
+      wall-52                                           52   wall              
+      wall-57                                           57   wall              
+      wall-58-shadow                                    67   wall              
+      wall-58                                           58   wall              
+      wall-59-shadow                                    66   wall              
+      wall-59                                           59   wall              
+      wall-60                                           60   wall              
+      wall-64                                           64   wall              
+      wall-63                                           63   wall              
+      wall-62                                           62   wall              
+      wall-61                                           61   wall              
+      wall-56                                           56   wall              
+      wall-55                                           55   wall              
+      wall-54                                           54   wall              
+      wall-53                                           53   wall              
+      wall-48                                           48   wall              
+      wall-47                                           47   wall              
+      wall-45                                           45   wall              
+      wall-44                                           44   wall              
+      wall-42                                           42   wall              
+      wall-41                                           41   wall              
+      wall-39                                           39   wall              
+      wall-38                                           38   wall              
+      airleftboundforinlet                              17   velocity-inlet    
+      airrightboundforoutlet                            18   pressure-outlet   
+      airupperbound                                     19   wall              
+      airlowerbound                                     20   wall              
+      contact_region_3-src                              21   interface         
+      contact_region_3-trg                              22   interface         
+      contact_region_4-src                              23   interface         
+      contact_region_4-trg                              24   interface         
+      contact_region_5-src                              25   interface         
+      contact_region_5-trg                              26   interface         
+      contact_region_6-src                              27   interface         
+      contact_region_6-trg                              28   interface         
+      contact_region_7-src                              29   interface         
+      bladeelectrodecentralbound-contact_region_7-src   30   interface         
+      contact_region_7-trg                              31   interface         
+      bladeelectrodecentralbound-contact_region_7-trg   32   interface         
+      contact_region_8-src                              33   interface         
+      bladeairbound-contact_region_8-src                34   interface         
+      contact_region_8-trg                              35   interface         
+      bladeairbound-contact_region_8-trg                36   interface         
+      surface_body                                      37   wall              
+
+   Setup Conditions
+
+      wall-52-shadow
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-57-shadow
+
+         Condition                  Value   
+         --------------------------------
+         Thermal BC Type            3       
+         Wall Motion                0       
+         Shear Boundary Condition   0       
+
+      wall-60-shadow
+
+         Condition                  Value   
+         --------------------------------
+         Thermal BC Type            3       
+         Wall Motion                0       
+         Shear Boundary Condition   0       
+
+      wall-9-shadow
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-9
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-40-shadow
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-40
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-43-shadow
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-43
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-46-shadow
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-46
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-49-shadow
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-49
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-50-shadow
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-50
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-51-shadow
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-51
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-52
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-57
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-58-shadow
+
+         Condition                  Value   
+         --------------------------------
+         Thermal BC Type            3       
+         Wall Motion                0       
+         Shear Boundary Condition   0       
+
+      wall-58
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-59-shadow
+
+         Condition                  Value   
+         --------------------------------
+         Thermal BC Type            3       
+         Wall Motion                0       
+         Shear Boundary Condition   0       
+
+      wall-59
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-60
+
+         Condition         Value   
+         -----------------------
+         Thermal BC Type   3       
+
+      wall-64
+
+         Condition                  Value      
+         -----------------------------------
+         Material Name              aluminum   
+         Thermal BC Type            1          
+         Wall Motion                0          
+         Shear Boundary Condition   0          
+
+      wall-63
+
+         Condition                  Value      
+         -----------------------------------
+         Material Name              aluminum   
+         Thermal BC Type            1          
+         Wall Motion                0          
+         Shear Boundary Condition   0          
+
+      wall-62
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   1          
+
+      wall-61
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   1          
+
+      wall-56
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   1          
+
+      wall-55
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   1          
+
+      wall-54
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   1          
+
+      wall-53
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   1          
+
+      wall-48
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   1          
+
+      wall-47
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   1          
+
+      wall-45
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   1          
+
+      wall-44
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   1          
+
+      wall-42
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   1          
+
+      wall-41
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   1          
+
+      wall-39
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   1          
+
+      wall-38
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   1          
+
+      airleftboundforinlet
+
+         Condition                   Value   
+         ---------------------------------
+         Velocity Magnitude (m/s)    90.4    
+         Turbulent Intensity (%)     1       
+         Turbulent Viscosity Ratio   0.5     
+
+      airrightboundforoutlet
+
+         Condition   Value   
+         -----------------
+
+      airupperbound
+
+         Condition                  Value      
+         -----------------------------------
+         Material Name              aluminum   
+         Thermal BC Type            1          
+         Wall Motion                0          
+         Shear Boundary Condition   0          
+
+      airlowerbound
+
+         Condition                  Value      
+         -----------------------------------
+         Material Name              aluminum   
+         Thermal BC Type            1          
+         Wall Motion                0          
+         Shear Boundary Condition   0          
+
+      contact_region_3-src
+
+         Condition   Value   
+         -----------------
+
+      contact_region_3-trg
+
+         Condition   Value   
+         -----------------
+
+      contact_region_4-src
+
+         Condition   Value   
+         -----------------
+
+      contact_region_4-trg
+
+         Condition   Value   
+         -----------------
+
+      contact_region_5-src
+
+         Condition   Value   
+         -----------------
+
+      contact_region_5-trg
+
+         Condition   Value   
+         -----------------
+
+      contact_region_6-src
+
+         Condition   Value   
+         -----------------
+
+      contact_region_6-trg
+
+         Condition   Value   
+         -----------------
+
+      contact_region_7-src
+
+         Condition   Value   
+         -----------------
+
+      bladeelectrodecentralbound-contact_region_7-src
+
+         Condition   Value   
+         -----------------
+
+      contact_region_7-trg
+
+         Condition   Value   
+         -----------------
+
+      bladeelectrodecentralbound-contact_region_7-trg
+
+         Condition   Value   
+         -----------------
+
+      contact_region_8-src
+
+         Condition   Value   
+         -----------------
+
+      bladeairbound-contact_region_8-src
+
+         Condition   Value   
+         -----------------
+
+      contact_region_8-trg
+
+         Condition   Value   
+         -----------------
+
+      bladeairbound-contact_region_8-trg
+
+         Condition   Value   
+         -----------------
+
+      surface_body
+
+         Condition         Value      
+         --------------------------
+         Material Name     aluminum   
+         Thermal BC Type   1          
+
+</BoundaryConditions>
+
+<SolverSettings>
+Solver Settings
+---------------
+
+   Equations
+
+      Equation     Solved   
+      -------------------
+      Flow         yes      
+      Turbulence   yes      
+      Energy       yes      
+
+   Numerics
+
+      Numeric                         Enabled   
+      ---------------------------------------
+      Absolute Velocity Formulation   yes       
+
+   Unsteady Calculation Parameters
+
+                                           
+      ----------------------------------
+      Time Step (s)                   1    
+      Max. Iterations Per Time Step   20   
+
+   Relaxation
+
+      Variable                    Relaxation Factor   
+      ---------------------------------------------
+      Density                     1                   
+      Body Forces                 1                   
+      Turbulent Kinetic Energy    0.8                 
+      Specific Dissipation Rate   0.8                 
+      Intermittency               0.8                 
+      Momentum Thickness Re       0.8                 
+      Turbulent Viscosity         1                   
+      Energy                      1                   
+
+   Linear Solver
+
+                                  Solver     Termination   Residual Reduction   
+      Variable                    Type       Criterion     Tolerance            
+      -----------------------------------------------------------------------
+      Flow                        F-Cycle    0.1                                
+      Turbulent Kinetic Energy    Flexible   0.1           0.7                  
+      Specific Dissipation Rate   Flexible   0.1           0.7                  
+      Intermittency               Flexible   0.1           0.7                  
+      Momentum Thickness Re       Flexible   0.1           0.7                  
+      Energy                      F-Cycle    0.1                                
+
+   Pressure-Velocity Coupling
+
+      Parameter                            Value     
+      --------------------------------------------
+      Type                                 Coupled   
+      Pseudo Transient                     no        
+      Flow Courant Number                  200       
+      Explicit momentum under-relaxation   0.75      
+      Explicit pressure under-relaxation   0.75      
+
+   Discretization Scheme
+
+      Variable                    Scheme                
+      -----------------------------------------------
+      Pressure                    Second Order          
+      Momentum                    Second Order Upwind   
+      Turbulent Kinetic Energy    First Order Upwind    
+      Specific Dissipation Rate   First Order Upwind    
+      Intermittency               First Order Upwind    
+      Momentum Thickness Re       First Order Upwind    
+      Energy                      Second Order Upwind   
+
+   Solution Limits
+
+      Quantity                         Limit    
+      ---------------------------------------
+      Minimum Absolute Pressure        1        
+      Maximum Absolute Pressure        5e+10    
+      Minimum Temperature              1        
+      Maximum Temperature              5000     
+      Minimum Turb. Kinetic Energy     1e-14    
+      Minimum Spec. Dissipation Rate   1e-20    
+      Maximum Turb. Viscosity Ratio    100000   
+
+</SolverSettings>
+
+</FluentXMLReport>

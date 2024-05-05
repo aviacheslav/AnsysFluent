@@ -1,0 +1,8 @@
+# encoding: utf-8
+# 2019 R2
+SetScriptVersion(Version="19.4.159")
+fileReference1 = GetFileReference(Name="F14")
+fileReference1.Repair(FilePath="D:/MyFilesCur/MyPrgs/Ansys/TryAeroDynHeat20230913/FFF-Setup-Output_Setup_CellZoneConds.cas.gz")
+fileReference2 = GetFileReference(Name="F12")
+fileReference2.Repair(FilePath="D:/MyFilesCur/MyPrgs/Ansys/TryAeroDynHeat20230913/FFF-Setup-Output_Setup_CellZoneConds.cas.gz")
+Save(Overwrite=True)

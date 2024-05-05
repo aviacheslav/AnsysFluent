@@ -1,0 +1,5 @@
+CSOURCES= $(SRC)heater_RV_x0.5_train1.c
+HSOURCES=
+VERSION=2d_host
+PARALLEL_NODE=none
+GPU_SUPPORT=off

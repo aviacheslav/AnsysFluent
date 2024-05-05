@@ -1,0 +1,237 @@
+
+Build Time: Apr 16 2019 10:59:31 
+Executable Path: D:/Prog/ANSYSI~1/v194/fluent/ntbin/win64/fluent.exe
+
+-------------------------------------------------------------------------------
+ID    Hostname  Core  O.S.         PID   Vendor                 
+-------------------------------------------------------------------------------
+n1    133-7320  2/4  Windows-x64  7984  Intel(R) Xeon(R) W3550 
+n0*   133-7320  1/4  Windows-x64  7656  Intel(R) Xeon(R) W3550 
+host  133-7320       Windows-x64  1420  Intel(R) Xeon(R) W3550 
+
+MPI Option Selected: ibmmpi
+Selected system interconnect: default
+-------------------------------------------------------------------------------
+Warning: Ignoring WB preference save-post-processing-images
+
+133-7320 is already loaded (70.7498%).                       Process affinity not being set.
+Reading "D:\MyFilesCur\MyPrgs\Ansys\TryAeroDynHeat20230913\proj3_files\dp0\FFF\MECH\FFF.msh"...
+Buffering for file scan...
+
+    3299 nodes, binary.
+     477 nodes, binary.
+    2425 2D interior faces, zone  1, binary.
+    4080 2D interior faces, zone  2, binary.
+     334 2D interior faces, zone  3, binary.
+      13 2D velocity-inlet faces, zone  9, binary.
+      13 2D pressure-outlet faces, zone 10, binary.
+      15 2D wall faces, zone 11, binary.
+      15 2D wall faces, zone 12, binary.
+     150 2D interface faces, zone 13, binary.
+      57 2D interface faces, zone 14, binary.
+     192 2D interface faces, zone 15, binary.
+      22 2D interface faces, zone 16, binary.
+    1250 quadrilateral cells, zone  8, binary.
+    2104 mixed cells, zone  6, binary.
+     187 mixed cells, zone  7, binary.
+
+
+
+Building...
+     mesh
+	auto partitioning mesh by Metis (fast),
+	distributing mesh
+		parts..,
+		faces..,
+		nodes..,
+		cells..,
+        bandwidth reduction using Reverse Cuthill-McKee: 1773/27 = 65.6667
+     materials,
+     interface,
+     domains,
+     zones,
+	contact_region_2-trg
+	boundofbladeandair-contact_region_2-src
+	contact_region-trg
+	boundofbladeandelectrode-contact_region-src
+	lowerwall
+	upperwall
+	airoutlet
+	airinlet
+	electrode
+	air
+	blade
+	interior-air
+	interior-blade
+	interior-electrode
+	interior-5
+	wall-17
+	wall-18
+	interior-19
+	wall-20
+	wall-21
+     mesh interfaces,
+     parallel,
+Done.
+
+Preparing mesh for display...
+Note: zone-surface: cannot create surface from sliding interface zone.
+Creating empty surface.
+Note: zone-surface: cannot create surface from sliding interface zone.
+Creating empty surface.
+Note: zone-surface: cannot create surface from sliding interface zone.
+Creating empty surface.
+Note: zone-surface: cannot create surface from sliding interface zone.
+Creating empty surface.
+Note: zone-surface: cannot create surface from sliding interface zone.
+Creating empty surface.
+Note: zone-surface: cannot create surface from sliding interface zone.
+Creating empty surface.
+Done.
+
+Writing Settings file "D:\MyFilesCur\MyPrgs\Ansys\TryAeroDynHeat20230913\proj3_files\dp0\FFF\Fluent\FFF.set"...
+	writing rp variables ... Done.
+	writing domain variables ... Done.
+	writing blade (type fluid) (mixture) ... Done.
+	writing air (type fluid) (mixture) ... Done.
+	writing electrode (type fluid) (mixture) ... Done.
+	writing wall-21 (type wall) (mixture) ... Done.
+	writing wall-20 (type wall) (mixture) ... Done.
+	writing interior-19 (type interior) (mixture) ... Done.
+	writing wall-18 (type wall) (mixture) ... Done.
+	writing wall-17 (type wall) (mixture) ... Done.
+	writing interior-5 (type interior) (mixture) ... Done.
+	writing interior-electrode (type interior) (mixture) ... Done.
+	writing interior-blade (type interior) (mixture) ... Done.
+	writing interior-air (type interior) (mixture) ... Done.
+	writing airinlet (type velocity-inlet) (mixture) ... Done.
+	writing airoutlet (type pressure-outlet) (mixture) ... Done.
+	writing upperwall (type wall) (mixture) ... Done.
+	writing lowerwall (type wall) (mixture) ... Done.
+	writing boundofbladeandelectrode-contact_region-src (type interface) (mixture) ... Done.
+	writing contact_region-trg (type interface) (mixture) ... Done.
+	writing boundofbladeandair-contact_region_2-src (type interface) (mixture) ... Done.
+	writing contact_region_2-trg (type interface) (mixture) ... Done.
+	writing sliding-interface contact_region ... Done
+	writing sliding-interface contact_region_2 ... Done
+	writing zones map name-id ... Done.
+"Updating Setup cell..."
+"Updating Solution cell..."
+Initialization based on settings...
+
+Initialize using the hybrid initialization method.
+
+Checking case topology... 
+-This case has both inlets & outlets 
+-Pressure information is not available at the boundaries.
+ Case will be initialized with constant pressure
+
+	iter		scalar-0
+
+	1		0.000000e+00
+	2		0.000000e+00
+	3		0.000000e+00
+	4		0.000000e+00
+	5		0.000000e+00
+	6		0.000000e+00
+	7		0.000000e+00
+	8		0.000000e+00
+	9		0.000000e+00
+	10		0.000000e+00
+
+Hybrid initialization is done.
+Writing data to D:\\MyFilesCur\\MyPrgs\\Ansys\\TryAeroDynHeat20230913\\proj3_files\\dp0\\FFF\\Fluent\\FFF.ip ...
+	x-coord
+	y-coord
+	pressure
+	x-velocity
+	y-velocity
+	hyb_init-0
+	hyb_init-1
+Done.
+("Unable to update solution. Number of iterations should be greater than zero.")
+
+Error: Unable to update solution. Number of iterations should be greater than zero.
+Error Object: #f
+Writing "| gzip -2cf > FFF-Setup-Output.cas.gz"...
+Writing temporary file C:\\TEMP\\flntgz-14202 ...
+    1250 quadrilateral cells, zone  8, binary.
+    2104 mixed cells, zone  6, binary.
+     187 mixed cells, zone  7, binary.
+    1250 cell partition ids, zone  8, 2 partitions, binary.
+    2104 cell partition ids, zone  6, 2 partitions, binary.
+     187 cell partition ids, zone  7, 2 partitions, binary.
+     210 mixed interior faces, zone 19, binary.
+     203 mixed interior faces, zone  5, binary.
+    2425 2D interior faces, zone  1, binary.
+    4080 2D interior faces, zone  2, binary.
+     334 2D interior faces, zone  3, binary.
+      13 2D velocity-inlet faces, zone  9, binary.
+      13 2D pressure-outlet faces, zone 10, binary.
+      15 2D wall faces, zone 11, binary.
+      15 2D wall faces, zone 12, binary.
+     150 2D interface faces, zone 13, binary.
+      57 2D interface faces, zone 14, binary.
+     192 2D interface faces, zone 15, binary.
+      22 2D interface faces, zone 16, binary.
+     210 interior parent pointers, zone 19, binary.
+     203 interior parent pointers, zone  5, binary.
+     210 interface metric data, zone 19, binary.
+     203 interface metric data, zone  5, binary.
+    3776 nodes, binary.
+    3776 node flags, binary.
+Done.
+
+Writing "| gzip -2cf > FFF-1.cas.gz"...
+Writing temporary file C:\\TEMP\\flntgz-14203 ...
+    1250 quadrilateral cells, zone  8, binary.
+    2104 mixed cells, zone  6, binary.
+     187 mixed cells, zone  7, binary.
+    1250 cell partition ids, zone  8, 2 partitions, binary.
+    2104 cell partition ids, zone  6, 2 partitions, binary.
+     187 cell partition ids, zone  7, 2 partitions, binary.
+     210 mixed interior faces, zone 19, binary.
+     203 mixed interior faces, zone  5, binary.
+    2425 2D interior faces, zone  1, binary.
+    4080 2D interior faces, zone  2, binary.
+     334 2D interior faces, zone  3, binary.
+      13 2D velocity-inlet faces, zone  9, binary.
+      13 2D pressure-outlet faces, zone 10, binary.
+      15 2D wall faces, zone 11, binary.
+      15 2D wall faces, zone 12, binary.
+     150 2D interface faces, zone 13, binary.
+      57 2D interface faces, zone 14, binary.
+     192 2D interface faces, zone 15, binary.
+      22 2D interface faces, zone 16, binary.
+     210 interior parent pointers, zone 19, binary.
+     203 interior parent pointers, zone  5, binary.
+     210 interface metric data, zone 19, binary.
+     203 interface metric data, zone  5, binary.
+    3776 nodes, binary.
+    3776 node flags, binary.
+Done.
+
+Writing "| gzip -2cf > FFF-1-00000.dat.gz"...
+Writing temporary file C:\\TEMP\\flntgz-14204 ...
+Done.
+
+
+Performance Timer for 0 iterations on 2 compute nodes
+  Average wall-clock time per iteration:              0.000 sec
+  Global reductions per iteration:                        0 ops
+  Global reductions time per iteration:               0.000 sec (0.0%)
+  Message count per iteration:                            0 messages
+  Data transfer per iteration:                        0.000 MB
+  LE solves per iteration:                                0 solves
+  LE wall-clock time per iteration:                   0.000 sec (0.0%)
+  LE global solves per iteration:                         0 solves
+  LE global wall-clock time per iteration:            0.000 sec (0.0%)
+  LE global matrix maximum size:                        14
+  AMG cycles per iteration:                           0.000 cycles
+  Relaxation sweeps per iteration:                        0 sweeps
+  Relaxation exchanges per iteration:                     0 exchanges
+  LE early protections (stall) per iteration:           0.000 times
+  LE early protections (divergence) per iteration:      0.000 times
+
+  Total wall-clock time:                              0.000 sec
+
